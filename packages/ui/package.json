@@ -1,8 +1,24 @@
 {
-  "name": "@antd-zod-bridge/ui",
+  "name": "@ssortia/antd-zod-bridge",
   "version": "1.0.0",
   "description": "Type-safe form components bridging Zod validation with Ant Design",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./dist/index.css": "./dist/index.css"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.mjs", 
+    "dist/*.css",
+    "dist/src/**/*.d.ts"
+  ],
   "scripts": {
     "build": "tsup && tsc --emitDeclarationOnly",
     "test": "vitest",
