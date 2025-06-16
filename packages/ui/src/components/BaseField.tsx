@@ -61,7 +61,7 @@ function BaseFieldComponent({
 
   return (
     <div className={fieldClassName} style={style}>
-      <label className={labelClassName}>
+      <label htmlFor={name} className={labelClassName}>
         {label}
         {required && (
           <span className={`azb-field-label-required ${classes?.labelRequired || ''}`}>
@@ -74,7 +74,13 @@ function BaseFieldComponent({
         <Controller
           name={name}
           control={control}
-          render={({ field }) => children(field, fieldState)}
+          render={({ field }) => {
+            const childElement = children(field, fieldState);
+            // Добавляем id к дочернему элементу для связи с label
+            return React.cloneElement(childElement as React.ReactElement<any>, {
+              id: name
+            });
+          }}
         />
       </div>
       

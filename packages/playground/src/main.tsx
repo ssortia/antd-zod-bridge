@@ -36,7 +36,7 @@ const userFormSchema = z.object({
   
   // Поля выбора
   country: z.string().min(1, "Выберите страну"),
-  gender: z.enum(['male', 'female', 'other'], { required_error: "Выберите пол" }),
+  gender: z.enum(['male', 'female'], { required_error: "Выберите пол" }),
   
   // Чекбоксы и соглашения
   subscribe: z.boolean(),
@@ -190,7 +190,7 @@ function App() {
             <Divider />
             
             <Title level={4}>Согласия</Title>
-            
+
             <CheckboxField name="subscribe">
               Подписаться на рассылку новостей
             </CheckboxField>
