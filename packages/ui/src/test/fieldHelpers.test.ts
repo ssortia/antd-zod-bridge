@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { hasError, getFieldStatus, formatErrorMessage, isRequired } from '../utils/fieldHelpers'
+import { hasError, getFieldStatus, formatErrorMessage, isRequired } from '../utils/fieldUtils'
 
-describe('fieldHelpers', () => {
+describe('fieldUtils', () => {
   describe('hasError', () => {
     it('returns true when error exists', () => {
       const error = { message: 'This field is required', type: 'required' }

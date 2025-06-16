@@ -50,7 +50,7 @@ const userFormSchema = z.object({
     .max(500, "Биография не должна превышать 500 символов")
     .optional(),
 
-  // Кастомное поле для демонстрации fieldHelpers
+  // Кастомное поле для демонстрации fieldUtils
   customField: z.string().min(3, "Минимум 3 символа"),
 
   // Список контактов для демонстрации ListField
@@ -221,11 +221,11 @@ function MainFormDemo() {
 
         <Divider />
 
-        <Title level={4}>Демонстрация fieldHelpers</Title>
+        <Title level={4}>Демонстрация fieldUtils</Title>
 
         <CustomField
           name="customField"
-          label="Кастомное поле с fieldHelpers"
+          label="Кастомное поле с fieldUtils"
           placeholder="Введите минимум 3 символа"
           required
         />
@@ -252,11 +252,11 @@ function MainFormDemo() {
   );
 }
 
-// Компонент для демонстрации fieldHelpers
-function FieldHelpersDemo() {
+// Компонент для демонстрации fieldUtils
+function fieldUtilsDemo() {
   return (
     <Card>
-      <Title level={3}>Демонстрация fieldHelpers</Title>
+      <Title level={3}>Демонстрация fieldUtils</Title>
       <Text>
         Кастомное поле использует утилиты из библиотеки для работы с ошибками:
       </Text>
@@ -276,7 +276,7 @@ function FieldHelpersDemo() {
         >
           <CustomField
             name="customField"
-            label="Кастомное поле с fieldHelpers"
+            label="Кастомное поле с fieldUtils"
             placeholder="Введите минимум 3 символа"
             required
           />
@@ -530,7 +530,7 @@ function App() {
     {
       key: '2',
       label: 'Field Helpers',
-      children: <FieldHelpersDemo />
+      children: <fieldUtilsDemo />
     },
     {
       key: '3',

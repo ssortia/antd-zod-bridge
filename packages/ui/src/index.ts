@@ -16,7 +16,7 @@ export { ListField } from './components/ListField';
 export { useFormField } from './hooks/useFormField';
 
 // Утилиты
-export * from './utils/fieldHelpers';
+export * from './utils/fieldUtils';
 export * from './utils/phoneUtils';
 
 // Локализация

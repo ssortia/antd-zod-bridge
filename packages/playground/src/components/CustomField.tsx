@@ -11,14 +11,14 @@ interface CustomFieldProps {
 }
 
 /**
- * Пример кастомного поля с использованием fieldHelpers
+ * Пример кастомного поля с использованием fieldUtils
  * Демонстрирует как использовать утилиты из библиотеки
  */
 export function CustomField({ name, label, placeholder, required = false }: CustomFieldProps) {
   const { control, formState: { errors } } = useFormContext();
   const fieldError = errors[name];
 
-  // Используем утилиты из fieldHelpers
+  // Используем утилиты из fieldUtils
   const hasFieldError = hasError(fieldError);
   const fieldStatus = getFieldStatus(fieldError);
   const errorMessage = formatErrorMessage(fieldError);

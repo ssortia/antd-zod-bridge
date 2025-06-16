@@ -4,7 +4,7 @@
   "description": "Type-safe form components bridging Zod validation with Ant Design",
   "main": "index.js",
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && tsc --emitDeclarationOnly",
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
