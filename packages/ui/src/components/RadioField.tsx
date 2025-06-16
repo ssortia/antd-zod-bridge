@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio, Space } from 'antd';
-import BaseField from './BaseField';
+import { BaseField } from './BaseField';
 import { RadioFieldProps } from '../types';
 
 export default function RadioField({ 

@@ -49,4 +49,3 @@ function TextFieldComponent({
 }
 
 export const TextField = memo(TextFieldComponent);
-export default TextField;

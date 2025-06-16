@@ -1,6 +1,6 @@
 import React from 'react';
 import { Select } from 'antd';
-import BaseField from './BaseField';
+import { BaseField } from './BaseField';
 import { SelectFieldProps } from '../types';
 
 export default function SelectField({ 

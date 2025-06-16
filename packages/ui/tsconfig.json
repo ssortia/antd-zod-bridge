@@ -11,7 +11,8 @@
     "declaration": true,
     "emitDeclarationOnly": false,
     "outDir": "dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "composite": true
   },
   "include": ["src"]
 }

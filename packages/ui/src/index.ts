@@ -11,6 +11,7 @@ export { default as SelectField } from './components/SelectField';
 export { default as RadioField } from './components/RadioField';
 export { default as CheckboxField } from './components/CheckboxField';
 export { DateField } from './components/DateField';
+export { default as ListField } from './components/ListField';
 export { useFormField } from './hooks/useFormField';
 
 // Утилиты
@@ -31,6 +32,7 @@ export type {
   RadioOption,
   DateFieldProps,
   TextAreaFieldProps,
+  ListFieldProps,
 } from './types';
 
 // Типы стилей

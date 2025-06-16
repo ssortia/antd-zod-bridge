@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input } from 'antd';
-import BaseField from './BaseField';
+import { BaseField } from './BaseField';
 import { TextAreaFieldProps } from '../types';
 
 const { TextArea } = Input;

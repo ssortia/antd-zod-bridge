@@ -92,4 +92,3 @@ function BaseFieldComponent({
 }
 
 export const BaseField = memo(BaseFieldComponent);
-export default BaseField;

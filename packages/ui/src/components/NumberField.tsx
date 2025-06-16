@@ -1,6 +1,6 @@
 import React from 'react';
 import { InputNumber } from 'antd';
-import BaseField from './BaseField';
+import { BaseField } from './BaseField';
 import { NumberFieldProps } from '../types';
 
 export default function NumberField({ 

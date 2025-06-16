@@ -5,21 +5,13 @@ import { StyleClasses } from './types/styles';
  * Базовые свойства для всех полей формы
  */
 export interface BaseFieldProps {
-  /** Уникальное имя поля */
   name: string;
-  /** Текст метки поля */
   label: string;
-  /** Размер компонента */
   size?: 'small' | 'middle' | 'large';
-  /** Отключить поле */
   disabled?: boolean;
-  /** Обязательное поле (добавляет визуальный индикатор) */
   required?: boolean;
-  /** CSS класс для кастомизации (legacy) */
   className?: string;
-  /** Inline стили (legacy) */
   style?: React.CSSProperties;
-  /** Кастомные CSS классы для детальной стилизации */
   classes?: StyleClasses;
 }
 
@@ -86,4 +78,13 @@ export interface TextAreaFieldProps extends BaseFieldProps {
   autoSize?: boolean | { minRows?: number; maxRows?: number };
   maxLength?: number;
   showCount?: boolean;
+}
+
+export interface ListFieldProps extends Omit<BaseFieldProps, 'size'> {
+  children: (index: number, remove: () => void) => React.ReactNode;
+  title?: string;
+  addButtonText?: string;
+  maxItems?: number;
+  minItems?: number;
+  showItemNumbers?: boolean;
 }

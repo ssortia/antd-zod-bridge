@@ -8,7 +8,8 @@
     "baseUrl": ".",
     "paths": {
       "@my/ui": ["../ui/src"]
-    }
+    },
+    "composite": true
   },
   "include": ["src"]
 }
