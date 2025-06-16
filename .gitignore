@@ -1,3 +1,4 @@
 .claude
+node_modules
 packages/ui/node_modules
 packages/playground/node_modules

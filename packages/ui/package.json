@@ -1,17 +1,24 @@
 {
-  "name": "ui",
+  "name": "@antd-zod-bridge/ui",
   "version": "1.0.0",
-  "description": "",
+  "description": "Type-safe form components bridging Zod validation with Ant Design",
   "main": "index.js",
   "scripts": {
     "build": "tsup"
   },
-  "keywords": [],
+  "keywords": ["react", "zod", "antd", "forms", "validation", "typescript"],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "antd": "^5.21.0",
+    "react-hook-form": "^7.53.0",
+    "@hookform/resolvers": "^3.9.0",
+    "zod": "^3.23.8",
+    "dayjs": "^1.11.10"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@types/react": "^19.1.8",

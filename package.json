@@ -1,15 +1,12 @@
 {
-  "name": "ui-lib-template",
+  "name": "antd-zod-bridge",
   "version": "1.0.0",
-  "description": "",
+  "description": "Type-safe form components bridging Zod validation with Ant Design",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "workspaces": [
-    "packages/*"
-  ],
-  "keywords": [],
+  "keywords": ["react", "zod", "antd", "forms", "validation", "typescript", "monorepo"],
   "author": "",
   "license": "MIT"
 }

@@ -1,0 +1,97 @@
+/* Antd Zod Bridge - CSS стили компонентов */
+
+/* Базовые стили для полей формы */
+.azb-field {
+  margin-bottom: 0;
+}
+
+.azb-field-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.85);
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.azb-field-label--error {
+  color: #ff4d4f;
+}
+
+.azb-field-label-required {
+  color: #ff4d4f;
+  margin-left: 4px;
+}
+
+.azb-field-error {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 4px;
+  line-height: 1.5;
+  min-height: 22px;
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Стили для формы */
+.azb-form {
+  width: 100%;
+}
+
+.azb-form-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Стили для полей даты */
+.azb-date-field .ant-picker {
+  width: 100%;
+}
+
+/* Стили для числовых полей */
+.azb-number-field .ant-input-number {
+  width: 100%;
+}
+
+/* Стили для селектов */
+.azb-select-field .ant-select {
+  width: 100%;
+}
+
+/* Утилитарные классы */
+.azb-field-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.azb-field-grid--2col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.azb-field-grid--3col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .azb-field-grid--2col,
+  .azb-field-grid--3col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Кастомизируемые CSS переменные */
+:root {
+  --azb-error-color: #ff4d4f;
+  --azb-label-color: rgba(0, 0, 0, 0.85);
+  --azb-font-size-sm: 14px;
+  --azb-spacing-xs: 4px;
+  --azb-spacing-sm: 8px;
+  --azb-spacing-md: 16px;
+  --azb-transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Темная тема (опционально) */
+[data-theme="dark"] {
+  --azb-label-color: rgba(255, 255, 255, 0.85);
+}
