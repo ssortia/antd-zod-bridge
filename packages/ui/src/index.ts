@@ -4,18 +4,20 @@ import './styles/index.css';
 export { ZodForm } from './components/ZodForm';
 export { BaseField } from './components/BaseField';
 export { TextField } from './components/TextField';
-export { default as PasswordField } from './components/PasswordField';
-export { default as TextAreaField } from './components/TextAreaField';
-export { default as NumberField } from './components/NumberField';
-export { default as SelectField } from './components/SelectField';
-export { default as RadioField } from './components/RadioField';
-export { default as CheckboxField } from './components/CheckboxField';
+export { PhoneField } from './components/PhoneField';
+export { PasswordField } from './components/PasswordField';
+export { TextAreaField } from './components/TextAreaField';
+export { NumberField } from './components/NumberField';
+export { SelectField } from './components/SelectField';
+export { RadioField } from './components/RadioField';
+export { CheckboxField } from './components/CheckboxField';
 export { DateField } from './components/DateField';
-export { default as ListField } from './components/ListField';
+export { ListField } from './components/ListField';
 export { useFormField } from './hooks/useFormField';
 
 // Утилиты
 export * from './utils/fieldHelpers';
+export * from './utils/phoneUtils';
 
 // Локализация
 export { zodRuLocale, setupZodRuLocale } from './locale';
@@ -24,6 +26,7 @@ export { zodRuLocale, setupZodRuLocale } from './locale';
 export type {
   BaseFieldProps,
   TextFieldProps,
+  PhoneFieldProps,
   NumberFieldProps,
   SelectFieldProps,
   SelectOption,

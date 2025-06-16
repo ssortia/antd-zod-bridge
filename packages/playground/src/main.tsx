@@ -8,6 +8,7 @@ import {
   ListField,
   NumberField,
   PasswordField,
+  PhoneField,
   RadioField,
   SelectField,
   TextAreaField,
@@ -25,6 +26,7 @@ const userFormSchema = z.object({
   firstName: z.string().min(2, "Имя должно содержать минимум 2 символа"),
   lastName: z.string().min(2, "Фамилия должна содержать минимум 2 символа"),
   email: z.string().email("Некорректный email адрес"),
+  phone: z.string().min(11, "Введите корректный номер телефона").max(11, "Номер телефона должен содержать 11 цифр"),
   password: z.string().min(6, "Пароль должен содержать минимум 6 символов"),
 
   // Числовые поля
@@ -106,6 +108,12 @@ function MainFormDemo() {
           name="email"
           label="Email"
           placeholder="example@email.com"
+          required
+        />
+
+        <PhoneField
+          name="phone"
+          label="Телефон"
           required
         />
 
@@ -195,10 +203,9 @@ function MainFormDemo() {
                 placeholder="Введите имя"
                 required
               />
-              <TextField
+              <PhoneField
                 name={`contacts.${index}.phone`}
                 label="Телефон"
-                placeholder="+7 (999) 123-45-67"
                 required
               />
               <div style={{ gridColumn: '1 / -1' }}>
@@ -499,6 +506,7 @@ function InstructionsTab() {
       <ul>
         <li><strong>ZodForm</strong> - Основной компонент формы с интеграцией Zod</li>
         <li><strong>TextField</strong> - Текстовое поле</li>
+        <li><strong>PhoneField</strong> - Поле для ввода телефона с маской российского номера</li>
         <li><strong>PasswordField</strong> - Поле для пароля</li>
         <li><strong>TextAreaField</strong> - Многострочное текстовое поле</li>
         <li><strong>NumberField</strong> - Числовое поле</li>

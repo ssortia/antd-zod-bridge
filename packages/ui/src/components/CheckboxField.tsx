@@ -3,7 +3,7 @@ import { Checkbox } from 'antd';
 import { Controller, useFormContext, useFormState, FieldError } from 'react-hook-form';
 import { CheckboxFieldProps } from '../types';
 
-export default function CheckboxField({ 
+export function CheckboxField({ 
   name, 
   children,
   disabled = false,

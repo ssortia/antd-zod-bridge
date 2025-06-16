@@ -3,7 +3,7 @@ import { InputNumber } from 'antd';
 import { BaseField } from './BaseField';
 import { NumberFieldProps } from '../types';
 
-export default function NumberField({ 
+export function NumberField({ 
   name, 
   label, 
   placeholder, 

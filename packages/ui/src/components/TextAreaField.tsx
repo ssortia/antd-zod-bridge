@@ -5,7 +5,7 @@ import { TextAreaFieldProps } from '../types';
 
 const { TextArea } = Input;
 
-export default function TextAreaField({ 
+export function TextAreaField({ 
   name, 
   label, 
   placeholder, 

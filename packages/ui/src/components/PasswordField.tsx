@@ -3,7 +3,7 @@ import { Input } from 'antd';
 import { BaseField } from './BaseField';
 import { TextFieldProps } from '../types';
 
-export default function PasswordField({ 
+export function PasswordField({ 
   name, 
   label, 
   placeholder, 

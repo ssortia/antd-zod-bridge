@@ -37,7 +37,7 @@ export interface ListFieldProps extends Omit<BaseFieldProps, 'size' | 'label'> {
  * Компонент для работы с динамическими массивами
  * Позволяет добавлять и удалять элементы списка
  */
-export default function ListField({
+export function ListField({
   name,
   label,
   title,

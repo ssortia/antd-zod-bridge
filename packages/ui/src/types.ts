@@ -23,6 +23,12 @@ export interface TextFieldProps extends BaseFieldProps {
   showCount?: boolean;
 }
 
+export interface PhoneFieldProps extends BaseFieldProps {
+  placeholder?: string;
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
+}
+
 export interface NumberFieldProps extends BaseFieldProps {
   placeholder?: string;
   prefix?: React.ReactNode;

@@ -3,7 +3,7 @@ import { Radio, Space } from 'antd';
 import { BaseField } from './BaseField';
 import { RadioFieldProps } from '../types';
 
-export default function RadioField({ 
+export function RadioField({ 
   name, 
   label, 
   options,
