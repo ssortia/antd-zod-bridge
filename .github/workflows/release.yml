@@ -31,6 +31,9 @@ jobs:
       - name: Build package
         run: pnpm --filter ui build
 
+      - name: Copy README to package
+        run: cp README.md packages/ui/
+
       - name: Publish to NPM
         run: |
           cd packages/ui
