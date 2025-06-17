@@ -4,7 +4,9 @@
   "description": "Type-safe form components bridging Zod validation with Ant Design",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd packages/ui && pnpm test",
+    "make": "cd packages/ui && pnpm build && pnpm pack",
+    "dev": "cd packages/playground && pnpm dev",
   },
   "keywords": ["react", "zod", "antd", "forms", "validation", "typescript", "monorepo"],
   "author": "ssortia",

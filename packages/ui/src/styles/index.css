@@ -2,6 +2,10 @@
 
 /* Базовые стили для полей формы */
 .azb-field {
+  margin-bottom: 16px;
+}
+
+.azb-field:last-child {
   margin-bottom: 0;
 }
 
@@ -27,8 +31,13 @@
   font-size: 14px;
   margin-top: 4px;
   line-height: 1.5;
-  min-height: 22px;
+  min-height: 0;
   transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.azb-field-error:not(:empty) {
+  min-height: 22px;
+  margin-bottom: 4px;
 }
 
 /* Стили для формы */
@@ -40,7 +49,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
 }
 
 /* Стили для полей даты */
