@@ -1,21 +1,20 @@
 import React, { FormHTMLAttributes } from 'react';
 import { FieldValues, FormProvider, useForm, UseFormProps } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { ZodSchema } from 'zod';
 import { FormStyleClasses } from '../types/styles';
 import { setupZodRuLocale } from "../locale";
+import { ZodType } from "zod";
 
 type ValidationMode = 'onChange' | 'onBlur' | 'onSubmit' | 'onTouched' | 'all';
 
 interface ZodFormProps<TFieldValues extends FieldValues = FieldValues>
   extends Omit<FormHTMLAttributes<HTMLFormElement>, 'onSubmit'> {
-  schema: ZodSchema<TFieldValues>;
+  schema: ZodType<any, any, TFieldValues>;
   onSubmit: (data: TFieldValues) => void | Promise<void>;
   children: React.ReactNode;
   validationMode?: ValidationMode;
   defaultValues?: UseFormProps<TFieldValues>['defaultValues'];
   resetAfterSubmit?: boolean;
-  /** Кастомные CSS классы для формы */
   classes?: FormStyleClasses;
 }
 
