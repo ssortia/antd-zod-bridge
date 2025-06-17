@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cd packages/ui && pnpm test",
     "make": "cd packages/ui && pnpm build && pnpm pack",
-    "dev": "cd packages/playground && pnpm dev",
+    "dev": "cd packages/playground && pnpm dev"
   },
   "keywords": ["react", "zod", "antd", "forms", "validation", "typescript", "monorepo"],
   "author": "ssortia",
