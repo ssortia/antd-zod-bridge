@@ -7,6 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["react", "zod", "antd", "forms", "validation", "typescript", "monorepo"],
-  "author": "",
+  "author": "ssortia",
   "license": "MIT"
 }

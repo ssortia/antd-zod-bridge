@@ -7,7 +7,7 @@
     "dev": "vite --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "ssortia",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^24.0.3",
