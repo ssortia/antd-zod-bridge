@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { z } from 'zod';
-import { Button, Card, Divider, Typography, Tabs } from 'antd';
+import { Button, Card, Divider, Typography, Tabs, Switch, ConfigProvider, theme } from 'antd';
 import {
   CheckboxField,
   DateField,
@@ -253,7 +253,7 @@ function MainFormDemo() {
 }
 
 // Компонент для демонстрации fieldUtils
-function fieldUtilsDemo() {
+function FieldUtilsDemo() {
   return (
     <Card>
       <Title level={3}>Демонстрация fieldUtils</Title>
@@ -521,6 +521,22 @@ function InstructionsTab() {
 }
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Сохраняем состояние темы в localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    // Обновляем data-theme атрибут для CSS переменных нашей библиотеки
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
   const tabItems = [
     {
       key: '1',
@@ -530,7 +546,7 @@ function App() {
     {
       key: '2',
       label: 'Field Helpers',
-      children: <fieldUtilsDemo />
+      children: <FieldUtilsDemo />
     },
     {
       key: '3',
@@ -550,19 +566,50 @@ function App() {
   ];
 
   return (
-    <div style={{ padding: '24px', maxWidth: '1200px', margin: '0 auto' }}>
-      <Title level={1}>Antd Zod Bridge - Демонстрация компонентов</Title>
-      <Text type="secondary">
-        Пример использования всех доступных компонентов формы с валидацией Zod
-      </Text>
-      
-      <Tabs
-        defaultActiveKey="1"
-        items={tabItems}
-        style={{ marginTop: '24px' }}
-        size="large"
-      />
-    </div>
+    <ConfigProvider
+      theme={{
+        algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+      }}
+    >
+      <div style={{ 
+        padding: '24px', 
+        maxWidth: '1200px', 
+        margin: '0 auto',
+        minHeight: '100vh',
+        backgroundColor: isDarkMode ? '#141414' : '#ffffff'
+      }}>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          marginBottom: '16px'
+        }}>
+          <div>
+            <Title level={1}>Antd Zod Bridge - Демонстрация компонентов</Title>
+            <Text type="secondary">
+              Пример использования всех доступных компонентов формы с валидацией Zod
+            </Text>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Text>🌞</Text>
+            <Switch 
+              checked={isDarkMode}
+              onChange={setIsDarkMode}
+              checkedChildren="🌙"
+              unCheckedChildren="☀️"
+            />
+            <Text>🌙</Text>
+          </div>
+        </div>
+        
+        <Tabs
+          defaultActiveKey="1"
+          items={tabItems}
+          style={{ marginTop: '24px' }}
+          size="large"
+        />
+      </div>
+    </ConfigProvider>
   );
 }
 

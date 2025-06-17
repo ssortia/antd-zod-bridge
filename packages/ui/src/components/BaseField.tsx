@@ -3,6 +3,7 @@ import { Controller, ControllerRenderProps, FieldError, useFormContext } from 'r
 import { BaseFieldProps } from '../types';
 import { StyleClasses } from '../types/styles';
 import { useFormField } from '../hooks/useFormField';
+import { useAntdZodBridgeStyle } from '../styles/inject';
 
 interface BaseFieldWrapperProps extends BaseFieldProps {
   children: (field: ControllerRenderProps, fieldState: {
@@ -31,6 +32,9 @@ function BaseFieldComponent({
 }: BaseFieldWrapperProps) {
   const { control } = useFormContext();
   const { error, isDirty, isTouched, isValid, isSubmitted } = useFormField(name);
+  
+  // Автоматически инжектируем стили при использовании компонента
+  useAntdZodBridgeStyle();
 
   const fieldState = useMemo(() => ({
     error,

@@ -1,6 +1,3 @@
-// Импорт стилей
-import './styles/index.css';
-
 export { ZodForm } from './components/ZodForm';
 export { BaseField } from './components/BaseField';
 export { TextField } from './components/TextField';
