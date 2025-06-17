@@ -1,35 +1,37 @@
 # Antd Zod Bridge
 
-Мощная TypeScript библиотека, которая бесшовно объединяет валидацию Zod с компонентами форм Ant Design для React, обеспечивая типобезопасную обработку форм с минимальным количеством шаблонного кода.
+A powerful TypeScript library that seamlessly integrates Zod validation with Ant Design form components for React, providing type-safe form handling with minimal boilerplate.
 
-## 🚀 Возможности
+📘 [Read this document in Russian](./README_RU.md)
 
-- 🔗 **Бесшовная интеграция** - Прямая интеграция между схемами Zod и компонентами Ant Design
-- 📝 **Типобезопасность** - Полная поддержка TypeScript с автоматическим выводом типов
-- 🎨 **Единообразный UI** - Предварительно стилизованные компоненты, следующие паттернам Ant Design
-- 🔍 **Умная валидация** - Встроенная валидация с пользовательскими сообщениями об ошибках
-- 🧩 **Модульность** - Используйте отдельные компоненты или полное решение для форм
-- 🎯 **Доступность** - Соответствует стандартам WCAG с правильными связями label
-- 🎭 **Автоматические стили** - Стили инжектируются автоматически без ручного импорта CSS
-- 🌙 **Темная тема** - Полная поддержка светлой и темной темы из коробки
-- 🧪 **Хорошо протестировано** - Всестороннее покрытие тестами с Vitest
-- 🌐 **Готово к интернационализации** - Поддерживает локализацию с включенной русской локалью
+## 🚀 Features
 
-## Установка
+- 🔗 **Seamless Integration** – Direct mapping between Zod schemas and Ant Design components  
+- 📝 **Type Safety** – Full TypeScript support with automatic type inference  
+- 🎨 **Consistent UI** – Pre-styled components following Ant Design patterns  
+- 🔍 **Smart Validation** – Built-in validation with custom error messages  
+- 🧩 **Modular** – Use individual components or a complete form solution  
+- 🎯 **Accessibility** – WCAG-compliant with proper label associations  
+- 🎭 **Auto Styling** – Styles are injected automatically with no need for manual CSS imports  
+- 🌙 **Dark Mode** – Full support for both light and dark themes out of the box  
+- 🧪 **Well Tested** – Comprehensive test coverage with Vitest  
+- 🌐 **i18n-Ready** – Supports localization with Russian locale included  
+
+## 📦 Installation
 
 ```bash
 npm i @ssortia/antd-zod-bridge
 ```
 
-## Быстрый старт
+## ⚡ Quick Start
 
 ```tsx
 import { z } from 'zod';
 import { ZodForm, TextField, NumberField, SelectField } from '@ssortia/antd-zod-bridge';
 
 const schema = z.object({
-  name: z.string().min(1, "Имя обязательно"),
-  age: z.number().min(18, "Возраст должен быть не менее 18"),
+  name: z.string().min(1, "Name is required"),
+  age: z.number().min(18, "You must be at least 18"),
   role: z.enum(['admin', 'user'])
 });
 
@@ -42,78 +44,77 @@ function MyForm() {
     <ZodForm schema={schema} onSubmit={handleSubmit}>
       <TextField 
         name="name" 
-        label="Имя" 
-        placeholder="Введите ваше имя"
+        label="Name" 
+        placeholder="Enter your name"
         required 
       />
-      
+
       <NumberField 
         name="age" 
-        label="Возраст" 
+        label="Age" 
         min={0}
         max={120}
         required 
       />
-      
+
       <SelectField 
         name="role" 
-        label="Роль" 
+        label="Role" 
         options={[
-          { label: 'Администратор', value: 'admin' },
-          { label: 'Пользователь', value: 'user' }
+          { label: 'Administrator', value: 'admin' },
+          { label: 'User', value: 'user' }
         ]}
         required 
       />
-      
-      <button type="submit">Отправить</button>
+
+      <button type="submit">Submit</button>
     </ZodForm>
   );
 }
 ```
 
-## 📚 Доступные компоненты
+## 📚 Available Components
 
-| Компонент | Описание | Основные возможности |
-|-----------|----------|---------------------|
-| **ZodForm** | Основной компонент формы с валидацией Zod | Интеграция с react-hook-form, автоматическая валидация, поддержка режимов валидации |
-| **TextField** | Текстовое поле ввода | Префиксы/суффиксы, счетчик символов, ограничение длины |
-| **PasswordField** | Поле для ввода пароля | Переключение видимости пароля, встроенная иконка |
-| **NumberField** | Поле для ввода чисел | Кнопки увеличения/уменьшения, форматирование, точность |
-| **TextAreaField** | Многострочное текстовое поле | Автоизменение размера, счетчик символов, ограничение строк |
-| **SelectField** | Выпадающий список | Поиск, множественный выбор, группировка опций |
-| **RadioField** | Группа радиокнопок | Горизонтальное/вертикальное расположение, отключение опций |
-| **CheckboxField** | Чекбокс | Поддержка JSX в тексте, состояния включено/выключено |
-| **DateField** | Поле выбора даты | Локализация, выбор времени, ограничение дат |
-| **ListField** | Динамический список | Добавление/удаление элементов, вложенные формы |
-| **PhoneField** | Поле для номера телефона | Автоматическая маска российского номера |
-| **BaseField** | Базовый компонент | Основа для создания кастомных полей с валидацией |
+| Component        | Description                          | Key Features                                                   |
+|------------------|--------------------------------------|----------------------------------------------------------------|
+| **ZodForm**       | Main form component with validation  | Integration with `react-hook-form`, automatic validation       |
+| **TextField**     | Single-line text input field         | Prefix/suffix, char counter, length restriction                |
+| **PasswordField** | Password input field                 | Toggle visibility, built-in icon                               |
+| **NumberField**   | Numeric input field                  | Increment/decrement buttons, formatting, precision             |
+| **TextAreaField** | Multiline text input                 | Autosize, character count, max rows                            |
+| **SelectField**   | Dropdown select                      | Search, multi-select, grouped options                          |
+| **RadioField**    | Radio button group                   | Horizontal/vertical layout, option disabling                   |
+| **CheckboxField** | Checkbox input                       | JSX label support, checked/unchecked state                     |
+| **DateField**     | Date picker                          | Localization, time picker, date limits                         |
+| **ListField**     | Dynamic list                         | Add/remove items, nested form support                          |
+| **PhoneField**    | Phone number input                   | Auto-masking for Russian format                                |
+| **BaseField**     | Base field component                 | Foundation for custom validated fields                         |
 
+## 🛠 Development
 
-## Разработка
-
-Этот проект использует pnpm workspace:
+This project uses a pnpm workspace:
 
 ```bash
-# Установка зависимостей
+# Install dependencies
 pnpm install
 
-# Сборка библиотеки
+# Build the library
 pnpm --filter ui build
 
-# Запуск playground для тестирования
+# Run the playground for testing
 pnpm --filter playground dev
 ```
 
-## Структура проекта
+## 🗂 Project Structure
 
 ```
 packages/
-├── ui/           # Основная библиотека компонентов
+├── ui/             # Main component library
 │   ├── src/
-│   │   ├── ZodForm.tsx      # Основной компонент формы
-│   │   ├── BaseField.tsx    # Базовый компонент поля
-│   │   ├── TextField.tsx    # Текстовое поле
-│   │   ├── SelectField.tsx  # Выпадающий список
-│   │   └── ...              # Другие компоненты полей
-└── playground/   # Playground для тестирования компонентов
+│   │   ├── ZodForm.tsx       # Core form component
+│   │   ├── BaseField.tsx     # Base field component
+│   │   ├── TextField.tsx     # Text input
+│   │   ├── SelectField.tsx   # Dropdown select
+│   │   └── ...               # Other form components
+└── playground/     # Playground for testing components
 ```
