@@ -1,6 +1,6 @@
 {
   "name": "@ssortia/antd-zod-bridge",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Type-safe form components bridging Zod validation with Ant Design",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
