@@ -16,7 +16,7 @@
 ## Установка
 
 ```bash
-pnpm add antd-zod-bridge
+npm i @ssortia/antd-zod-bridge
 ```
 
 ## Быстрый старт
