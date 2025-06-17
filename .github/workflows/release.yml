@@ -26,10 +26,10 @@ jobs:
         run: pnpm install
 
       - name: Run tests
-        run: pnpm --filter ui test:run
+        run: pnpm --filter @ssortia/antd-zod-bridge test:run
 
       - name: Build package
-        run: pnpm --filter ui build
+        run: pnpm --filter @ssortia/antd-zod-bridge build
 
       - name: Copy README to package
         run: cp README.md packages/ui/

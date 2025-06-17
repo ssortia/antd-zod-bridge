@@ -14,10 +14,7 @@
     "./dist/index.css": "./dist/index.css"
   },
   "files": [
-    "dist/*.js",
-    "dist/*.mjs",
-    "dist/*.css",
-    "dist/src/**/*.d.ts",
+    "dist",
     "README.md"
   ],
   "scripts": {
